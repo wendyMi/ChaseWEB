@@ -1,9 +1,8 @@
 {
   "name": "chase",
   "version": "1.0.0",
-  "description": "\"npm install express@4.14.0",
   "main": "web.js" ,"dependencies": {
-    "socket.io":"latest" },
+    "socket.io":"latest", '"express":"~4.15.4"},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
