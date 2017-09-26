@@ -14,7 +14,8 @@ router.post('/join',function(req,res){
     console.log("POSTING");
             
     var connection=mysql.createConnection({
-        host: 'localhost',
+        host: '10.0.0.1',
+        port: '3306',
         user: 'peakchase',
         password :'wendy0917',
         database : 'peakchase'
