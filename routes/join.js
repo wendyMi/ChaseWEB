@@ -55,7 +55,7 @@ router.post('/join',function(req,res){
            }else{
             
                 connection.beginTransaction();
-            
+            // 이 곳에서 로그인이 안됨!
                 var query= connection.query('insert into chase_user set ?',new_user,function(err,result){
                             if(err) {
                                     res.send('<script>alert("이미 존재하는 아이디이거나 이메일입니다.");self.close();parent.location.replace("/join");</script>');

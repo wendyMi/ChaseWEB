@@ -11,7 +11,8 @@ router.get('/login', function(req, res, next) {
 router.post('/login', function(req,res){
             
         var connection=mysql.createConnection({
-                host: 'localhost',
+                host: '10.0.0.1',
+                port: '3306',
             user: 'peakchase',
             password :'wendy0917',
             database : 'peakchase'
