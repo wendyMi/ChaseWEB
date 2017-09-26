@@ -16,10 +16,11 @@ router.post('/material_board', function(req, res) {
             console.log("Posting...");
             
             var connection=mysql.createConnection({
-                                                  host: 'localhost',
-                                                  user: 'root',
-                                                  password :'turing',
-                                                  database : 'chase'
+     host: '10.0.0.1',
+                        port: '3306',
+                        user: 'peakchase',
+                        password :'wendy0917',
+                        database : 'peakchase'
             });
             
             connection.connect();

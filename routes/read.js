@@ -9,10 +9,11 @@ router.get('/read', function(req, res, next) {
            var login_id=global.login_id;
            
            var connection=mysql.createConnection({
-                                                 host: 'localhost',
-                                                 user: 'root',
-                                                 password :'turing',
-                                                 database : 'chase'
+     host: '10.0.0.1',
+                        port: '3306',
+                        user: 'peakchase',
+                        password :'wendy0917',
+                        database : 'peakchase'
             });
            
            connection.connect();
