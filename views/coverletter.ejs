@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="stylesheets/coverletter.css">
+    <style>
+    strong{
+      font-size: 1.5em;
+    }
+    .btn{
+      height:30px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h2>Cover Letter Programme</h2>
+      </header>
+      <section>
+        <article>
+          <div class="box">
+            <strong>Question</strong>
+          </div>
+          <form action="/coverletter" method="post">
+            <div>
+              <textarea cols="45" rows="10" id="question" name="question">
+              </textarea>
+            </div>
+            <div class="btn">
+              <input type="submit">
+            </div>
+          </form>
+        </article>
+        <aside>
+          <div class="box">
+            <strong>Answer</strong>
+          </div>
+          <div>
+            <textarea cols="45" rows="10" id="answer" readonly>
+              <%if(rows.length>0){var i = 0;rows.forEach(function(item){i++;%><%=item.answer%>
+              <%})} else {%>I'm so sorry. I can't answer the question.<%}%>
+            </textarea>
+          </div>
+          <div class="btn">
+          </div>
+        </aside>
+      </section>
+      <footer>
+        <p>Email : leejieun902@gmail.com</p>
+        <p>Copyright (C) 2017 Jennie all rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
