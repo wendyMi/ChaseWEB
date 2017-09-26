@@ -1,0 +1,46 @@
+var express = require('express');
+var router = express.Router();
+var mysql=require('mysql');
+var async=require('async');
+
+/* GET home page. */
+router.get('/read', function(req, res, next) {
+           
+           var login_id=global.login_id;
+           
+           var connection=mysql.createConnection({
+                                                 host: 'localhost',
+                                                 user: 'root',
+                                                 password :'turing',
+                                                 database : 'chase'
+            });
+           
+           connection.connect();
+           
+           connection.beginTransaction();
+           
+           var count_sql="SELECT COUNT(*) as mail_count from "+login_id+"_mailbox where checked=0";
+           
+           var query1 = connection.query(count_sql,function(err,rows){
+                                         if(err) {
+                                         res.render(err);
+                                         }
+                                         console.log(rows[0].mail_count);
+                                         global.mail_count=rows[0].mail_count;
+                                         });
+           
+           var show_sql='select user_id,mail_title, mail_text from kim_mailbox where mail_no=1';
+           
+           var query = connection.query(show_sql,function(err,rows){
+                                        if(err) {
+                                        res.render(err);
+                                        }
+                                        console.log(rows);
+                                        res.render('read',{login_id:login_id,mail_count:global.mail_count,rows: rows});
+                                        });
+           
+           connection.commit();
+           connection.end();
+});
+
+module.exports = router;
