@@ -29,7 +29,7 @@ router.post('/fnq_board', function(req, res) {
             var fnq_file=req.body.fnq_file;
             var fnq_text=req.body.fnq_text;
             
-            var fnq_send="insert into fnq(fnq_title, fnq_file, fnq_text) values('"+fnq_title+"','"+fnq_file+"','"+fnq_text+"')";
+            var fnq_send="insert into fnq(fnq_title, fnq_text) values('"+fnq_title+"','"+fnq_text+"')";
             
             var insert_query= connection.query(fnq_send,function(err,result){
                                                if(err) {

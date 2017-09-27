@@ -17,7 +17,7 @@ router.get('/myquestion/:page', function(req, res, next) {
             });
            
            connection.connect();
-           var show_sql="select question_no,question_title,question_id,question_done,question_answer from qna where question_id='"+login_id+"' order by question_no desc";
+           var show_sql="select question_no,question_title,user_id,question_state,question_answer from qna where question_id='"+login_id+"' order by question_no desc";
            
            var query = connection.query(show_sql,function(err,rows){
                                         if(err) {
