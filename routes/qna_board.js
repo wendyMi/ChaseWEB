@@ -14,7 +14,7 @@ router.post('/qna_board', function(req, res) {
             
             console.log("Posting...");
             var connection=mysql.createConnection({
-                                                       host: '10.0.0.1',
+                        host: '10.0.0.1',
                         port: '3306',
                         user: 'peakchase',
                         password :'wendy0917',

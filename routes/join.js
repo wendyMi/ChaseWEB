@@ -45,7 +45,7 @@ router.post('/join',function(req,res){
         "user_nickname":id,
         "user_birth":birth,
         "user_gender":gender,
-        "user_done":user_done
+        "user_process":user_done
     };
             
         console.log(new_user);
