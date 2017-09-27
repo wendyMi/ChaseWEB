@@ -10,11 +10,11 @@ router.get('/mail/:page', function(req, res, next) {
            var login_id=global.login_id;
            
            var connection=mysql.createConnection({
-                        host: '10.0.0.1',
-                        port: '3306',
-                        user: 'peakchase',
-                        password :'wendy0917',
-                        database : 'peakchase'
+                                                 host: '10.0.0.1',
+                                                 port: '3306',
+                                                 user: 'peakchase',
+                                                 password :'wendy0917',
+                                                 database : 'peakchase'
                                                  });
            
            connection.connect();
@@ -31,7 +31,7 @@ router.get('/mail/:page', function(req, res, next) {
                                         global.mail_count=rows[0].mail_count;
                                         });
            
-           var mail_sql="SELECT user_id, mail_title from "+login_id+"_mailbox order by mail_no desc";
+           var mail_sql="SELECT mail_no, user_id, mail_title from "+login_id+"_mailbox order by mail_no desc";
            
            var query2 = connection.query(mail_sql,function(err,rows){
                                          if(err) {

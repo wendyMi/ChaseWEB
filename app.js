@@ -80,7 +80,7 @@ app.get('/mail/:page',mail);
 app.get('/send',send);
 app.post('/send',send);
 
-app.get('/read',read);
+app.get('/read/:mail_no',read);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
