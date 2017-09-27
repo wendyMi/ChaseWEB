@@ -27,7 +27,7 @@ router.post('/qna_board', function(req, res) {
             var question_text=req.body.question_text;
             var login_id=global.login_id;
             
-            var insert_question="insert into qna(question_title, question_text, question_id) values('"+question_title+"','"+question_text+"','"+login_id+"')";
+            var insert_question="insert into qna(question_title, question_text, user_id) values('"+question_title+"','"+question_text+"','"+login_id+"')";
             
             var query= connection.query(insert_question,function(err,result){
                         if(err) {
