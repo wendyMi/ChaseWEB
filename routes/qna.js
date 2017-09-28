@@ -9,15 +9,15 @@ router.get('/qna/:page', function(req, res, next) {
            var login_id=global.login_id;
            
            var connection=mysql.createConnection({
-                             host: '10.0.0.1',
-                        port: '3306',
-                        user: 'peakchase',
-                        password :'wendy0917',
-                        database : 'peakchase'
+                                                 host: '10.0.0.1',
+                                                 port: '3306',
+                                                 user: 'peakchase',
+                                                 password :'wendy0917',
+                                                 database : 'peakchase'
             });
            
            connection.connect();
-           var show_sql='select question_no,question_title,user_id,question_state from qna';
+           var show_sql='select question_no,question_title,user_id,question_done from qna';
            
            var query = connection.query(show_sql,function(err,rows){
                             if(err) {
