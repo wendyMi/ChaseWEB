@@ -9,7 +9,7 @@ router.get('/download/:filename', function(req, res, next) {
            
            var filename=req.params.filename;
            var ftype='sample.pptx';
-           var savedpath='/home/hosting_users/peakchase/upload'; //다운로드할 파일이 위치한 디렉터리의 경로
+           var savedpath='/home/hosting_users/peakchase/(root)upload'; //다운로드할 파일이 위치한 디렉터리의 경로
            var file=savedpath+'/'+filename;
            
            res.setHeader('Content-disposition', 'attachment: filename'+filename);
