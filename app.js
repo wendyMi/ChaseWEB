@@ -29,7 +29,7 @@ var mail=require('./routes/mail');
 var send=require('./routes/send');
 var read=require('./routes/read');
 var mail_read = require('./routes/mail_read');
-
+var download = require('./routes/download');
 var app = express();
 
 // view engine setup
@@ -60,6 +60,8 @@ app.get('/main',main);
 app.get('/material/:stage/:page',material);
 app.get('/material_board',material_board);
 app.post('/material_board',material_board);
+
+app.get('/download/:filename',download);
 
 app.get('/qna/:page',qna);
 app.get('/qna/read/:qna_no',qna_read);
