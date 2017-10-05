@@ -32,6 +32,8 @@ var mail_read = require('./routes/mail_read');
 var download = require('./routes/download');
 var app = express();
 
+var mkdir=require('./routes/mkdir');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
