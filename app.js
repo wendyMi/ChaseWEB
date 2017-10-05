@@ -96,6 +96,8 @@ app.post('/send',send);
 
 app.get('/read/:mail_no',read);
 
+app.get('/mkdir', mkdir)
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
