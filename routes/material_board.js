@@ -13,6 +13,7 @@ router.get('/material_board', function(req, res, next) {
 /* POST home page. */
 router.post('/material_board', upload.single('material_file'), function(req, res) {
             
+            console.log(req.file)
             var filename=req.files.filename;
             console.log(filename);
             var login_id=global.login_id;
