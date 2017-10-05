@@ -95,16 +95,19 @@
                     <button type="button" class="btn" onclick="document.location.href='/material/1/1'">List</button>
                 </div>
                 <br>
-                <form name="sentMessage" id="contactForm" novalidate method="post">
+                <form name="sentMessage" id="contactForm" novalidate method="post" enctype="multipart/form-data">
                     <div class="row control-group">
                         <div class="form-group col-xs-12 controls">
                             <div class="col-xs-2">
                                 <p>Stage</p>
                             </div>
                             <div class="col-xs-10">
-                                <input type="text" class="form-control" placeholder="stage" name="story_no" required>
-                                    <p class="help-block text-danger"></p>
-                                    </div>
+                                <select id="story_no" name="story_no">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="row control-group">
