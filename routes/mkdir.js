@@ -5,7 +5,7 @@ var mkdirp=require('mkdirp');
 /* GET home page. */
 router.get('/mkdir', function(req, res, next) {
            
-           mkdirp('/home/hosting_users/peakchase/apps/peakchase_chase/testDir', function (err) {
+           mkdirp('/hosting_users/peakchase/apps/peakchase_chase/testDir', function (err) {
                   if (err){
                     res.render(err);
                   }
