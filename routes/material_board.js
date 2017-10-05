@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var mysql=require('mysql');
+var multer=require('multer');
+var upload=multer({dest :'home/hosting_users/peakchase/apps/peakchase_chase/upload/'});
 
 /* GET home page. */
 router.get('/material_board', function(req, res, next) {
@@ -9,8 +11,10 @@ router.get('/material_board', function(req, res, next) {
 });
 
 /* POST home page. */
-router.post('/material_board', function(req, res) {
+router.post('/material_board', upload.single('material_file'), function(req, res) {
             
+            var filename=req.file.filename;
+            console.log(filename);
             var login_id=global.login_id;
             
             console.log("Posting...");
@@ -30,7 +34,7 @@ router.post('/material_board', function(req, res) {
             var material_text=req.body.material_text;
             
             
-            var material_send="insert into material(story_no, material_title, material_text) values('"+story_no+"','"+material_title+"','"+material_text+"')";
+            var material_send="insert into material(story_no, material_title, material_path, material_text) values('"+story_no+"','"+material_title+"','"+filename+"','"+material_text+"')";
             
             var insert_query= connection.query(material_send,function(err,result){
                                                if(err) {
