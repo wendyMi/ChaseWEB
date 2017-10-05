@@ -30,9 +30,10 @@ var send=require('./routes/send');
 var read=require('./routes/read');
 var mail_read = require('./routes/mail_read');
 var download = require('./routes/download');
+var mkdir=require('./routes/mkdir');
+
 var app = express();
 
-var mkdir=require('./routes/mkdir');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
