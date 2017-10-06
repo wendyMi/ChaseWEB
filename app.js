@@ -16,7 +16,7 @@ var main = require('./routes/main');
 var qna=require('./routes/qna');
 var qna_board=require('./routes/qna_board');
 var qna_read =require('./routes/qna_read');
-//qna_answer 
+var qna_answer = require('./routes/qna_answer');//창미++ 
 
 
 var fnq=require('./routes/fnq');
@@ -29,7 +29,9 @@ var user_info=require('./routes/user_info');
 var myquestion=require('./routes/myquestion');
 var mail=require('./routes/mail');
 var send=require('./routes/send');
-var read=require('./routes/read');
+// **********************없는부분 -- **************
+var read=require('./routes/read'); 
+//************************************************
 var mail_read = require('./routes/mail_read');
 var download = require('./routes/download');
 var mkdir=require('./routes/mkdir');
@@ -56,6 +58,7 @@ app.use('/users', users);
 //*****************************************************
 app.post('/join',join);
 app.get('/join',join);
+//app.get('/join/confirm/:id',join);
 
 app.get('/login',login);
 app.post('/login',login);
@@ -63,6 +66,10 @@ app.post('/login',login);
 app.get('/main',main);
 
 app.get('/material/:stage/:page',material);
+app.get('/material/:material_no',material); //창미++ 
+app.get('/materialedited/:material_no',material) //창미++ 
+app.post('/materialedited/:material_no',material) //창미++ 
+app.get('/materialdeleted/:material_no',material) //창미++ 
 app.get('/material_board',material_board);
 app.post('/material_board',material_board);
 
@@ -75,6 +82,10 @@ app.get('/qna/update/:qna_no',qna_read);
 app.post('/qna/updata/:qna_no',qna_read);
 app.get('/qna_board',qna_board);
 app.post('/qna_board',qna_board);
+
+app.get('/qna/answer/:qna_no',qna_answer); //창미++
+app.post('/qna/answer/:qna_no',qna_answer);//창미++
+
 
 app.get('/fnq/:page',fnq);
 app.get('/fnq_board',fnq_board);
