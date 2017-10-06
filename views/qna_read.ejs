@@ -93,7 +93,7 @@
             <%rows.forEach(function(item){%>
             <%i++;%>
             <div class="upload">
-                <button type="button" class="btn" onclick="document.location.href='/qna/1'">list</button>
+                <button type="button" class="btn" onclick="document.location.href='/qna/answer/<%=item.question_no%>'">Answer</button>
                 <button type="button" class="btn" onclick="document.location.href='/qna/update/<%=item.question_no%>'">Update</button>
                 <button type="button" class="btn" onclick="document.location.href='/qna/delete/<%=item.question_no%>'">Delete</button>
             </div>
@@ -102,7 +102,7 @@
                 <div class="panel-body">
                     [제목] <%=item.question_title%>
                     <hr>
-                    [글쓴이] <%=item.user_id%>
+                    [글쓴이] <%=item.question_id%>
                     <hr>
                     <%=item.question_text%>
                     <hr>

@@ -9,22 +9,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>My question</title>
+    <title>Freelancer - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="../../stylesheets/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="../stylesheets/freelancer.min.css" rel="stylesheet">
+    <link href="../../stylesheets/freelancer.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
         
     <!-- board Custom CSS -->
-    <link href="../stylesheets/shop-homepage.css" rel="stylesheet">
-    <link href="../stylesheets/metisMenu.min.css" rel="stylesheet">
+    <link href="../../stylesheets/shop-homepage.css" rel="stylesheet">
 
     <style>
         .upload {text-align:right;margin-right:20px;}
@@ -82,47 +81,75 @@
     <div class="container">
         <br><br><br>
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <div class="panel-group" id="accordion">
-                        <%
-                            for(var i=(page*page_num)-page_num; i<(page*page_num); i++){
-                                if(i>leng){
-                                    i++;
-                                }else{
-                                    var item=rows[i];
-                                %>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#<%=item.question_no%>"><%=item.question_title%></a>
-                                </h4>
-                            </div>
-                            <div id="<%=item.question_no%>" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <%=item.question_text%>
-                                </div>
-                            </div>
-                            <%
-                                }
-                                }
-                                %>
-                        </div>
-                        <%
-                            for(var j=0;j<rows.length/10;j++){
-                                
-                            %>
-                        [<a href="/myquestion/<%=j+1%>"><%=j+1%></a>]
-                        <%
-                            }
-                            %>
-                    </div>
+            <div class="col-md-3">
+                <p class="lead">Question Board</p>
+                <div class="list-group">
+                    <a href="/fnq" class="list-group-item">F &amp; Q</a>
+                    <a href="/qna" class="list-group-item category_selected">Q &amp; A</a>
                 </div>
-                <!-- /.panel-body -->
             </div>
-            <div class="col-md-2"></div>
+            
+            <div class="col-md-9">
+                <div class="upload">
+                    <button type="button" class="btn" onclick="document.location.href='/qna/1'">List</button>
+                </div>
+                <br>
+                <form name="sentMessage" id="contactForm" method="post">
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 controls">
+                            <div class="col-xs-2">
+                                <p>Title</p>
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" value="<%=question_title%>" name="question_title" readonly>
+                                    <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 controls">
+                            <div class="col-xs-2">
+                                <p>Writer</p>
+                            </div>
+                            <div class="col-xs-10">
+                                <input type="text" class="form-control" value="<%=question_id%>" name="question_title" readonly>
+                                    <p class="help-block text-danger"></p>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 controls">
+                            <div class="col-xs-2">
+                                <p>Text</p>
+                            </div>
+                            <div class="col-xs-10">
+                                <textarea rows="5" class="form-control" name="question_text" readonly><%=question_text%></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 controls">
+                            <div class="col-xs-2">
+                                <p>Answer</p>
+                            </div>
+                            <div class="col-xs-10">
+                                <textarea rows="3" class="form-control" name="question_answer"><%=question_answer%></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12 text-center">
+                            <button type="submit" class="btn btn-success btn-lg">Upload</button>
+                            <button type="button" class="btn btn-success btn-lg" onclick="document.location.href='/qna/1'">Back</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
         </div>
+        
     </div>
     <!-- /.container -->
     <!------------------->
@@ -183,17 +210,17 @@
     </div>
 
     <!-- jQuery -->
-    <script src="../javascripts/jquery.min.js"></script>
+    <script src="../../javascripts/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../javascripts/bootstrap.min.js"></script>
+    <script src="../../javascripts/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
+
     <!-- Theme JavaScript -->
-    <script src="../javascripts/freelancer.min.js"></script>
-    <script src="../javascripts/metisMenu.min.js"></script>
+    <script src="../../javascripts/freelancer.min.js"></script>
 
 </body>
 

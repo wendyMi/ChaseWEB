@@ -16,6 +16,8 @@ var main = require('./routes/main');
 var qna=require('./routes/qna');
 var qna_board=require('./routes/qna_board');
 var qna_read =require('./routes/qna_read');
+//qna_answer 
+
 
 var fnq=require('./routes/fnq');
 var fnq_board=require('./routes/fnq_board');
