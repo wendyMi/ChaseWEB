@@ -14,7 +14,7 @@ router.post('/join',function(req,res){
     console.log("POSTING");
             
     var connection=mysql.createConnection({
-        host: 'ckdal34.cafe24.com',
+        host: '222.122.84.74',
         port: '3306',
         user: 'ckdal34',
         password :'wendy0917',
