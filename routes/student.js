@@ -18,7 +18,7 @@ router.get('/student/:page', function(req, res, next) {
            
            connection.connect();
            
-           var sql="select c.user_id, c.user_done, s.student_name from chase_user c,"+login_id+"_student s where s.student_id=c.user_id";
+           var sql="select c.user_id, c.user_process, s.student_name from chase_user c,"+login_id+"_student s where s.student_id=c.user_id";
            
            var query = connection.query(sql,function(err,rows){
                                         if(err) {
