@@ -10,11 +10,11 @@ router.get('/mail/read/:mail_no', function(req, res, next) {
            var mail_no=req.params.mail_no;
            
            var connection=mysql.createConnection({
-                                                 host: '10.0.0.1',
-                                                 port: '3306',
-                                                 user: 'peakchase',
-                                                 password :'wendy0917',
-                                                 database : 'peakchase'
+                                                 host: '222.122.84.74',
+        port: '3306',
+        user: 'ckdal34',
+        password :'wendy0917',
+        database : 'ckdal34'
             });
            
            connection.connect();
@@ -52,11 +52,11 @@ router.get('/mail/delete/:mail_no', function(req, res, next) {
            var login_id=global.login_id;
            
            var connection=mysql.createConnection({
-                                                 host: '10.0.0.1',
-                                                 port: '3306',
-                                                 user: 'peakchase',
-                                                 password :'wendy0917',
-                                                 database : 'peakchase'
+                                                 host: '222.122.84.74',
+        port: '3306',
+        user: 'ckdal34',
+        password :'wendy0917',
+        database : 'ckdal34'
                                                  });
            
            connection.connect();
