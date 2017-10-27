@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql=require('mysql');
 var multer=require('multer');
-var upload=multer({dest :'upload/'});
+var upload=multer({dest :'home/hosting_users/peakchase/apps/peakchase_chase/upload/'});
 
 /* GET home page. */
 router.get('/material_board', function(req, res, next) {
