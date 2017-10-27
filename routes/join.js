@@ -96,7 +96,7 @@ router.post('/join',function(req,res){
 
 /* Confirm */
 router.get('/join/confirm/:id',function(req,res,next){
-           
+           console.log("confirm");
            global.id=req.params.id;
            
            var connection=mysql.createConnection({

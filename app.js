@@ -69,7 +69,7 @@ app.get('/material/:stage/:page',material);
 app.get('/material/:material_no',material); //창미++ 
 app.get('/materialedited/:material_no',material) //창미++ 
 app.post('/materialedited/:material_no',material) //창미++ 
-app.get('/materialdeleted/:material_no',material) //창미++ 
+app.get('/materialdeleted/:material_no',material) 
 app.get('/material_board',material_board);
 app.post('/material_board',material_board);
 
