@@ -58,7 +58,7 @@ app.use('/users', users);
 //*****************************************************
 app.post('/join',join);
 app.get('/join',join);
-//app.get('/join/confirm/:id',join);
+app.get('/join/confirm/:id',join);
 
 app.get('/login',login);
 app.post('/login',login);
