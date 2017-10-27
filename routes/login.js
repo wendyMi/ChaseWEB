@@ -11,7 +11,7 @@ router.get('/login', function(req, res, next) {
 router.post('/login', function(req,res){
             
         var connection=mysql.createConnection({
-                   host: '222.122.84.74',
+               host: '222.122.84.74',
         port: '3306',
         user: 'ckdal34',
         password :'wendy0917',
@@ -24,9 +24,8 @@ router.post('/login', function(req,res){
             
         var query = connection.query('select user_id,user_pw from chase_user where user_id=?',[login_id],function(err,rows){
                 if(err) res.render(err);
-                                         
-                console.log(rows);
-                                         
+                                     
+                if(rows!=""){
                 var checkid=rows[0].user_id;
                 var checkpw=rows[0].user_pw;
                                          
@@ -35,6 +34,9 @@ router.post('/login', function(req,res){
                     }else{
                         res.send('<script>alert("비밀번호가 틀립니다."); location.href="/login";</script>');
                     }
+        }else{
+                res.send('<script>alert("일치하는 아이디가 업습니다."); location.href="/login";</script>');
+        }
         });
             
         connection.end();
