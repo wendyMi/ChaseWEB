@@ -30,6 +30,13 @@ router.get('/mail/read/:mail_no', function(req, res, next) {
                                          console.log(rows[0].mail_count);
                                          global.mail_count=rows[0].mail_count;
                                          });
+
+           var checked_sql="update "+login_id+"_mailbox set checked=1 where mail_no="+mail_no;
+
+           var checked_query = connection.query(checked_sql,function(err,rows){
+                                         if(err)
+                                          res.render(err);
+                                         });
            
            var show_sql="select mail_no,user_id,mail_title,mail_text from "+login_id+"_mailbox where mail_no="+mail_no;
            
