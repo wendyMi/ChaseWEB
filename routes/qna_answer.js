@@ -17,18 +17,18 @@ router.get('/qna/answer/:qna_no', function(req, res, next) {
             });
            
            connection.connect();
-           var show_sql='select question_title,question_id,question_text,question_answer from qna where question_no='+question_no;
+           var show_sql='select question_title,user_id,question_text,question_answer from qna where question_no='+question_no;
            
            var query = connection.query(show_sql,function(err,rows){
                             if(err) {
                                         res.render(err);
                             }
                                         var question_title=rows[0].question_title;
-                                        var question_id=rows[0].question_id;
+                                        var user_id=rows[0].user_id;
                                         var question_text=rows[0].question_text;
                                         var question_answer=rows[0].question_answer;
                                         
-                                        res.render('qna_answer',{login_id:login_id,question_title:question_title, question_id:question_id, question_text:question_text,question_answer:question_answer});
+                                        res.render('qna_answer',{login_id:login_id,question_title:question_title, question_id:user_id, question_text:question_text,question_answer:question_answer});
             });
            
            
